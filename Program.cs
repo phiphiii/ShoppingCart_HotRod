@@ -3,10 +3,11 @@ namespace ShoppingCart
 {
     class Program
     {
-        List<Product> Products = new List<Product> { };
-        //new Product(){ProductId = 1, ProductModel = "CD-60 V3", ProductBrand = "Fender", ProductPrice = 650.0}
+        
         static void Main(string[] args)
         {
+            List<Product> Products = new List<Product> { };
+            Products.Add(new Product(){ ProductId = 1, ProductModel = "CD-60 V3", ProductBrand = "Fender", ProductPrice = 650.0 });
             try
             {
                 Menu();
