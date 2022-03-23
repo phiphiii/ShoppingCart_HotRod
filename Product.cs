@@ -19,7 +19,7 @@ namespace ShoppingCart
             this.ProductBrand = ProductBrand;
             this.ProductPrice = ProductPrice;
         }
-        public string Wyswietl()
+        public string Wyswietl(Product piwko)
         {
             return ProductId + ". " + ProductModel + " - " + ProductBrand + " | " + ProductPrice + "zł";
         }

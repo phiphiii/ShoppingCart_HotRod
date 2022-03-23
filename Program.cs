@@ -12,6 +12,10 @@ namespace ShoppingCart
             Products.Add(new Product(3, "PLAYER PLUS STRATOCASTER HSS PF BLB", "Fender",4999.0));
             Products.Add(new Product(4, "EC-256 SW", "LTD",650.0));
             Products.Add(new Product(5, "SLG200N SILENT GUITAR", "YAMAHA", 3499.0));
+
+            var piwko = new Product(3, "PLAYER PLUS STRATOCASTER HSS PF BLB", "Fender", 4999.0);
+
+            piwko.Wyswietl(new Product(3, "PLAYER PLUS STRATOCASTER HSS PF BLB", "Fender", 4999.0));
             try
             {
                 Menu(Products);
@@ -41,7 +45,7 @@ namespace ShoppingCart
                     case 2:
                         try
                         {
-                            Products.ShowAll(Products);
+                            //Products.ShowAll(Products);
                         }
                         catch (FormatException)
                         {
