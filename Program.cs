@@ -7,17 +7,22 @@ namespace ShoppingCart
         static void Main(string[] args)
         {
             List<Product> Products = new List<Product> { };
-            Products.Add(new Product(){ ProductId = 1, ProductModel = "CD-60 V3", ProductBrand = "Fender", ProductPrice = 650.0 });
+            Products.Add(new Product(1,"CD-60 V3","Fender",650.0));
+            Products.Add(new Product(2, "GD10-NS", "TAKAMINE", 999.0));
+            Products.Add(new Product(3, "PLAYER PLUS STRATOCASTER HSS PF BLB", "Fender",4999.0));
+            Products.Add(new Product(4, "EC-256 SW", "LTD",650.0));
+            Products.Add(new Product(5, "SLG200N SILENT GUITAR", "YAMAHA", 3499.0));
             try
             {
-                Menu();
+                Menu(Products);
+                
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
                 Console.WriteLine("\nPodano nie poprawną opcję\n");
             }
         }
-        static void Menu()
+        static void Menu(List<Product> Products)
         {
             int opcja = 0;
             do { 
@@ -34,14 +39,21 @@ namespace ShoppingCart
                         Console.WriteLine("Twoj koszyk: \n");
                         break;
                     case 2:
-                        Console.WriteLine("Lista produktów\n");
-                        Console.WriteLine("Podaj ID by dodać produkt");
+                        try
+                        {
+                            Products.ShowAll(Products);
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("\nPodano nie poprawną opcję\n");
+                        }
                         break;
                 }
             } while (opcja != 6) ;
             
 
         }
+        
     }
     
 
